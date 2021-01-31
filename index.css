@@ -1,0 +1,51 @@
+html {
+    font-family: Neue Haas Grotesk, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(19, 19, 19);
+    color: rgb(165, 165, 165);
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+nav > p {
+    margin: 5px;
+    width: 100%;
+    font-weight: 100;
+    letter-spacing: 3px;
+    cursor: pointer;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px double rgba(255, 255, 255, 0);
+    border-bottom: 4px solid rgba(255, 255, 255, 0);
+}
+
+#logo {
+    font-weight: bold;
+    color: white;
+}
+
+nav > p:hover {
+    animation-name: navhover;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes navhover {
+    to {
+        border: 1px double white;
+        border-bottom: 4px solid white;
+    }
+}
+
+@font-face {
+    font-family: Neue Haas Grotesk;
+    src: url(NeueHaasGrotesk.ttf);
+}

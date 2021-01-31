@@ -5,6 +5,7 @@ html {
     background-color: rgb(19, 19, 19);
     color: rgb(165, 165, 165);
     box-sizing: border-box;
+    border-top: 1px solid rgb(165, 165, 165);
 }
 
 nav {
@@ -13,6 +14,7 @@ nav {
     justify-content:space-evenly;
     align-items: center;
     text-align: center;
+    
 }
 
 .navItem {
@@ -39,6 +41,46 @@ nav {
     animation-name: navhover;
     animation-duration: 1s;
     animation-fill-mode: both;
+}
+
+#destinations {
+    display: flex;
+    flex-direction: row;
+}
+
+.destination {
+    min-width: 0;
+    margin: 0 3px 0 3px;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.destinationlabel {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: bold;
+    font-size: 64px;
+    margin: 0;
+    color: white;
+    opacity: 70%;
+}
+
+.destination:hover .destinationlabel {
+    opacity: 100%;
+}
+
+img {
+    object-fit: cover;
+    min-width: 0;
+    height: 84vh;
+}
+
+h1 {
+    margin-left: 4px;
 }
 
 @keyframes navhover {

@@ -76,6 +76,34 @@ nav {
     opacity: 100%;
 }
 
+button {
+    background-color: rgb(19, 19, 19);
+    border: none;
+    outline: none;
+}
+
+button:hover .arrow{
+    opacity: 100%;
+}
+
+.arrow {
+    border: solid rgb(165, 165, 165);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    opacity: 70%;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
 img {
     object-fit: cover;
     min-width: 0;

@@ -8,7 +8,7 @@
   </head>
   <body>
     <nav>
-      <a href="" class="navItem">DESTINATIONS</a>
+      <a href="destinations.html" class="navItem">DESTINATIONS</a>
       <a href="triumphs.html" class="navItem">TRIUMPHS</a>
       <a href="index.html" id="logo" class="navItem">CONFLUX</a>
       <a href="quests.html" class="navItem">QUESTS</a>
@@ -18,55 +18,58 @@
     <h1>Destinations</h1>
 
     <div id="destinations">
-      <div class="destination">
+      <button class = "buttonleft" onclick="updateCarousel(this.className, 'destination')">LEFT</button>
+      <div class="destination" name = "destination">
         <img src="images/destinations/tower.webp" />
         <p class="destinationlabel">Tower</p>
       </div>
-      <div class="destination">
+      <div class="destination" name = "destination">
         <img src="images/destinations/edz.webp" />
         <p class="destinationlabel">EDZ</p>
       </div>
-      <div class="destination">
+      <div class="destination" name = "destination">
         <img src="images/destinations/cosmodrome.webp" />
         <p class="destinationlabel">Cosmodrome</p>
       </div>
-      <div class="destination">
+      <div class="destination" name = "destination">
         <img src="images/destinations/nessus.webp" />
         <p class="destinationlabel">Nessus</p>
       </div>
-      <div class="destination">
+      <div class="destination" name = "destination">
         <img src="images/destinations/dreamingcity.webp" />
         <p class="destinationlabel">Dreaming City</p>
       </div>
-      <div class="destination">
+      <div class="destination" name = "destination">
         <img src="images/destinations/tangledshore.webp" />
         <p class="destinationlabel">Tangled Shore</p>
       </div>
-      <div class="destination">
+      <div class="destination" name = "destination">
         <img src="images/destinations/moon.webp" />
         <p class="destinationlabel">Moon</p>
       </div>
-      <div class="destination">
+      <div class="destination" name = "destination">
         <img src="images/destinations/europa.webp" />
         <p class="destinationlabel">Europa</p>
       </div>
+      <button class = "buttonright" onclick="updateCarousel(this.className, 'destination')">RIGHT</button>
     </div>
 
     <h1>Dungeons</h1>
 
     <div id="destinations">
-        <div class="destination">
+        <div class="destination" name = "dungeon">
           <img src="images/destinations/shatteredthrone.webp" />
           <p class="destinationlabel">Shattered Throne</p>
         </div>
-        <div class="destination">
+        <div class="destination" name = "dungeon">
           <img src="images/destinations/pitofheresy.webp" />
           <p class="destinationlabel">Pit of Heresy</p>
         </div>
-        <div class="destination">
+        <div class="destination" name = "dungeon">
           <img src="images/destinations/prophecy.webp" />
           <p class="destinationlabel">Prophecy</p>
         </div>
       </div>
+      <script src = "index.js"></script>
   </body>
 </html>

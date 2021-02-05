@@ -82,7 +82,11 @@ button {
     outline: none;
 }
 
-button:hover .arrow{
+.buttonright:hover .arrow{
+    opacity: 100%;
+}
+
+.buttonleft:hover .arrow{
     opacity: 100%;
 }
 

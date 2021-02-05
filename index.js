@@ -20,14 +20,14 @@ const carousels = {
 	"dungeon": dungeon_data
 }
 
-function shift_Right(a){
+function shift_Left(a){
 	let temp = a[a.length - 1];
 	a.pop();
 	a.unshift(temp);
 	return a;
 }
 
-function shift_Left(a){
+function shift_Right(a){
 	let temp = a[0];
 	a.shift();
 	a.push(temp);

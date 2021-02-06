@@ -80,6 +80,7 @@ button {
     background-color: rgb(19, 19, 19);
     border: none;
     outline: none;
+    flex-basis: 25%;
 }
 
 .arrow:hover {
@@ -88,20 +89,18 @@ button {
 
 .arrow {
     border: solid rgb(165, 165, 165);
-    border-width: 0 5px 5px 0;
+    border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
     opacity: 70%;
   }
   
 .arrow.right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg) scale(2,2);
   }
   
 .arrow.left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg) scale(2,2);
   }
 
 img {

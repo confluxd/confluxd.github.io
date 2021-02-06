@@ -62,7 +62,7 @@ function updateCarousel(button, parent, name){
 		for(let i = 0; i < parents.length; i++){
 			parents[i].style["transition"] = `transform 0s ease-in-out`;
 			parents[i].style["transform"] = `translate3d(0, 0, 0)`;
-			parents[i].getElementsByTagName("p")[0].innerText = carousels[name][i]["label"];
+			//parents[i].getElementsByTagName("p")[0].innerText = carousels[name][i]["label"];
 			parents[i].getElementsByTagName("img")[0].src = carousels[name][i]["image"];
 		}
 	}, 500);

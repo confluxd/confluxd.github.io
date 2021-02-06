@@ -54,7 +54,7 @@ function updateCarousel(button, parent){
 	for(let i = 0; i < parents.length; i++){
 		if(i === end) continue;
 		const parent_Width = parents[end].clientWidth;
-		parents[i].style["transition"] = `transform 1s ease-in-out`;
+		parents[i].style["transition"] = `transform 0.5s ease-in-out`;
 		parents[i].style["transform"] = `translate3d(${direction*(parent_Width + 6)}px, 0, 0)`;
 	}
 	setTimeout(function(){

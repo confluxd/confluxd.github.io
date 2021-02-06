@@ -39,9 +39,18 @@ function updateCarousel(button, parent){
 	else if(button === "buttonright") carousels[parent] = shift_Right(carousels[parent]);
 
 	let parents = document.getElementsByName(parent);
-
-	for(let i = 0; i < parents.length; i++){
-		parents[i].getElementsByTagName("p")[0].innerText = carousels[parent][i]["label"];
-		parents[i].getElementsByTagName("img")[0].src = carousels[parent][i]["image"];
+	
+	for(let i = 1; i < parents.length; i++){
+		const parent_Width = parents[0].clientWidth;
+		parents[i].style["transition"] = `transform 1s ease-in-out`;
+		parents[i].style["transform"] = `translate3d(-${parent_Width}px, 0, 0)`;
 	}
+	setTimeout(function(){
+		for(let i = 0; i < parents.length; i++){
+			parents[i].style["transition"] = `transform 0s ease-in-out`;
+			parents[i].style["transform"] = `translate3d(0, 0, 0)`;
+			parents[i].getElementsByTagName("p")[0].innerText = carousels[parent][i]["label"];
+			parents[i].getElementsByTagName("img")[0].src = carousels[parent][i]["image"];
+		}
+	}, 1000);
 }

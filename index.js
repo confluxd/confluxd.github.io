@@ -35,15 +35,27 @@ function shift_Right(a){
 }
 
 function updateCarousel(button, parent){
+	let direction = 1;
+	let end = 0;
 	if(button === "buttonleft") carousels[parent] = shift_Left(carousels[parent]);
-	else if(button === "buttonright") carousels[parent] = shift_Right(carousels[parent]);
+	else if(button === "buttonright") {
+		carousels[parent] = shift_Right(carousels[parent]);
+		direction = -1;
+	}
 
-	let parents = document.getElementsByName(parent);
+	const parents = document.getElementsByName(parent);
+
+	if(direction === 1){
+		end = parents.length - 1;
+	}
+
+	parents[end].style["z-index"] = -1;
 	
-	for(let i = 1; i < parents.length; i++){
-		const parent_Width = parents[0].clientWidth;
+	for(let i = 0; i < parents.length; i++){
+		if(i === end) continue;
+		const parent_Width = parents[end].clientWidth;
 		parents[i].style["transition"] = `transform 1s ease-in-out`;
-		parents[i].style["transform"] = `translate3d(-${parent_Width + 6}px, 0, 0)`;
+		parents[i].style["transform"] = `translate3d(${direction*(parent_Width + 6)}px, 0, 0)`;
 	}
 	setTimeout(function(){
 		for(let i = 0; i < parents.length; i++){
@@ -52,5 +64,5 @@ function updateCarousel(button, parent){
 			parents[i].getElementsByTagName("p")[0].innerText = carousels[parent][i]["label"];
 			parents[i].getElementsByTagName("img")[0].src = carousels[parent][i]["image"];
 		}
-	}, 1000);
+	}, 500);
 }

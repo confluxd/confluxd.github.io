@@ -82,11 +82,7 @@ button {
     outline: none;
 }
 
-.buttonright:hover .arrow{
-    opacity: 100%;
-}
-
-.buttonleft:hover .arrow{
+.arrow:hover {
     opacity: 100%;
 }
 
@@ -98,12 +94,12 @@ button {
     opacity: 70%;
   }
   
-  .right {
+.arrow.right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
   }
   
-  .left {
+.arrow.left {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
   }

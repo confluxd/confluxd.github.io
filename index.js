@@ -34,16 +34,16 @@ function shift_Right(a){
 	return a;
 }
 
-function updateCarousel(button, parent){
+function updateCarousel(button, parent, name){
 	let direction = 1;
 	let end = 0;
-	if(button === "buttonleft") carousels[parent] = shift_Left(carousels[parent]);
-	else if(button === "buttonright") {
-		carousels[parent] = shift_Right(carousels[parent]);
+	if(button === "button left") carousels[name] = shift_Left(carousels[name]);
+	else if(button === "button right") {
+		carousels[name] = shift_Right(carousels[name]);
 		direction = -1;
 	}
 
-	const parents = document.getElementsByName(parent);
+	const parents = parent.getElementsByClassName(name);
 
 	if(direction === 1){
 		end = parents.length - 1;
@@ -57,12 +57,13 @@ function updateCarousel(button, parent){
 		parents[i].style["transition"] = `transform 0.5s ease-in-out`;
 		parents[i].style["transform"] = `translate3d(${direction*(parent_Width + 6)}px, 0, 0)`;
 	}
+
 	setTimeout(function(){
 		for(let i = 0; i < parents.length; i++){
 			parents[i].style["transition"] = `transform 0s ease-in-out`;
 			parents[i].style["transform"] = `translate3d(0, 0, 0)`;
-			parents[i].getElementsByTagName("p")[0].innerText = carousels[parent][i]["label"];
-			parents[i].getElementsByTagName("img")[0].src = carousels[parent][i]["image"];
+			parents[i].getElementsByTagName("p")[0].innerText = carousels[name][i]["label"];
+			parents[i].getElementsByTagName("img")[0].src = carousels[name][i]["image"];
 		}
 	}, 500);
 }

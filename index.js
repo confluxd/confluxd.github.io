@@ -1,6 +1,6 @@
 const destination_data = [
 	{"label":"Tower", "image":"images/destinations/tower.webp"}, 
-	{"label":"Edz", "image":"images/destinations/edz.webp"}, 
+	{"label":"EDZ", "image":"images/destinations/edz.webp"}, 
 	{"label":"Cosmodrome", "image":"images/destinations/cosmodrome.webp"}, 
 	{"label":"Nessus", "image":"images/destinations/nessus.webp"}, 
 	{"label":"Dreaming City", "image":"images/destinations/dreamingcity.webp"}, 

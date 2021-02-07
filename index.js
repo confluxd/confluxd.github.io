@@ -50,20 +50,25 @@ function updateCarousel(button, parent, name){
 	}
 
 	parents[end].style["z-index"] = -1;
+
+	const start = parents.length - 1 - end;
+
+	parents[start].style["background-image"] = `url(${carousels[name][start]["image"]})`;
 	
 	for(let i = 0; i < parents.length; i++){
 		if(i === end) continue;
 		const parent_Width = parents[end].clientWidth;
-		parents[i].style["transition"] = `transform 0.5s ease-in-out`;
-		parents[i].style["transform"] = `translate3d(${direction*(parent_Width + 6)}px, 0, 0)`;
+		const img = parents[i].getElementsByTagName("img")[0];
+		img.style["transition"] = `transform 0.5s ease-in-out`;
+		img.style["transform"] = `translate3d(${direction*(parent_Width + 6)}px, 0, 0)`;
 	}
 
 	setTimeout(function(){
 		for(let i = 0; i < parents.length; i++){
-			parents[i].style["transition"] = `transform 0s ease-in-out`;
-			parents[i].style["transform"] = `translate3d(0, 0, 0)`;
-			//parents[i].getElementsByTagName("p")[0].innerText = carousels[name][i]["label"];
-			parents[i].getElementsByTagName("img")[0].src = carousels[name][i]["image"];
+			const img = parents[i].getElementsByTagName("img")[0];
+			img.style["transition"] = `transform 0s ease-in-out`;
+			img.style["transform"] = `translate3d(0, 0, 0)`;
+			img.src = carousels[name][i]["image"];
 		}
 	}, 500);
 }

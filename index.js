@@ -44,6 +44,11 @@ function updateCarousel(button, parent, name){
 	}
 
 	const parents = parent.getElementsByClassName(name);
+	const buttons = parent.getElementsByClassName(button.split(" ")[0]);
+
+	for(let b of buttons){
+		b.disabled = true;
+	}
 
 	if(direction === 1){
 		end = parents.length - 1;
@@ -70,5 +75,9 @@ function updateCarousel(button, parent, name){
 			img.style["transform"] = `translate3d(0, 0, 0)`;
 			img.src = carousels[name][i]["image"];
 		}
+		for(let b of buttons){
+			b.disabled = false;
+		}
+		parents[start].style["background-image"] = "none";
 	}, 500);
 }

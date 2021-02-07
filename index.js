@@ -43,7 +43,7 @@ function updateCarousel(button, parent, name){
 		direction = -1;
 	}
 
-	const parents = parent.getElementsByClassName(name);
+	const parents = parent.getElementsByClassName("destination");
 	const buttons = parent.getElementsByClassName(button.split(" ")[0]);
 
 	for(let b of buttons){
